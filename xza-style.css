@@ -1,0 +1,43 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 20px;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 80%;
+}
+button {
+  padding: 10px 20px;
+  margin: 10px;
+}
+.hidden {
+  display: none;
+}
+#error-msg {
+  color: red;
+}
+.price-box {
+  background: #eee;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+#welcome-msg {
+  font-size: 24px;
+  color: green;
+  animation: colorChange 2s infinite;
+}
+@keyframes colorChange {
+  0% { color: red; }
+  50% { color: blue; }
+  100% { color: green; }
+}
