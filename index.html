@@ -3,141 +3,161 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>XZA - بوت صديق فري فاير</title>
+  <title>XZA | بوت صديق فري فاير</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap');
 
-    body {
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'Readex Pro', sans-serif;
-      background: linear-gradient(to right, #141e30, #243b55);
-      color: #ffffff;
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1e3c72);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      color: white;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      padding: 20px;
     }
 
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 35px 30px;
-      border-radius: 25px;
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
-      backdrop-filter: blur(8px);
+    .container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px 25px;
+      border-radius: 20px;
       max-width: 500px;
-      width: 90%;
-      animation: popIn 1s ease;
+      width: 100%;
+      box-shadow: 0 0 25px #00f7ff;
+      animation: fadeIn 1.5s ease;
+      text-align: center;
     }
 
     h1 {
+      margin-bottom: 20px;
       font-size: 26px;
-      margin-bottom: 8px;
       color: #00f7ff;
       text-shadow: 0 0 5px #00f7ff;
     }
 
-    .sub {
-      color: #00ffaa;
-      font-size: 18px;
-      margin-bottom: 20px;
+    input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    button {
+      padding: 12px 25px;
+      background: #00f7ff;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #00ffaa;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .show {
+      display: block;
     }
 
     .prices {
-      background: rgba(255, 255, 255, 0.07);
-      padding: 20px;
+      background: rgba(255, 255, 255, 0.08);
       border-radius: 15px;
-      text-align: right;
-      margin: 20px 0;
-      box-shadow: inset 0 0 10px #00c3ff;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 0 10px #00c9ff;
     }
 
     .prices span {
       display: block;
       margin: 8px 0;
-      font-size: 17px;
-      color: #f2f2f2;
+      font-size: 18px;
     }
 
-    .prices h2 {
-      color: #ffdd00;
-      margin-bottom: 10px;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .buttons button {
-      background: #00f7ff;
-      border: none;
-      border-radius: 10px;
-      padding: 10px 20px;
-      font-weight: bold;
-      cursor: pointer;
-      color: #000;
-      transition: 0.3s;
-    }
-
-    .buttons button:hover {
-      background: #00ffaa;
-    }
-
-    .contact {
-      margin-top: 20px;
-      font-size: 15px;
-      color: #eee;
-    }
-
-    .contact a {
-      color: #00f7ff;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    @keyframes popIn {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>🤖 XZA - بوت صديق فري فاير 👑</h1>
-    <div class="sub">🎉 مرحباً بك أيها البطل! 🚀</div>
-    <p>موقع رسمي لبيع بوتات فري فاير الخاصة بفريق XZA</p>
 
-    <div class="prices">
-      <h2>💲 الأسعار:</h2>
-      <span>🔥 يوم واحد: 1$</span>
-      <span>⚡ يومين: 2$</span>
-      <span>🚀 3 أيام: 5$</span>
-      <span>🎯 أسبوع: 20$</span>
-      <span>🌟 شهر: 29$</span>
-      <span>👑 سنة: 150$</span>
+  <div class="container">
+    <h1>🔒 تسجيل الدخول</h1>
+    <div class="section show" id="loginSection">
+      <input type="password" id="loginPass" placeholder="أدخل كلمة السر (2025)">
+      <button onclick="validateLogin()">دخول</button>
+      <p id="loginError" style="color: red;"></p>
     </div>
 
-    <div class="buttons">
-      <button>طرق الدفع 💳</button>
-      <button>تواصل مع المطور 👨‍💻</button>
+    <div class="section" id="infoSection">
+      <h1>🧾 معلوماتك</h1>
+      <input type="text" id="username" placeholder="اسمك">
+      <input type="number" id="age" placeholder="عمرك">
+      <button onclick="showPrices()">التالي</button>
     </div>
 
-    <div class="contact">
-      <p>📞 رقم المطور: <b>+213541700591</b></p>
-      <p>📬 تيليجرام: <a href="https://t.me/DeV_xzanja">@DeV_xzanja</a></p>
-      <p>⚡ XZA © جميع الحقوق محفوظة - 2025</p>
+    <div class="section" id="pricingSection">
+      <h1>💰 قائمة الأسعار</h1>
+      <div class="prices">
+        <span>🔥 يوم: 1$</span>
+        <span>⚡ يومين: 2$</span>
+        <span>🚀 3 أيام: 5$</span>
+        <span>🎯 أسبوع: 20$</span>
+        <span>🌟 شهر: 29$</span>
+        <span>👑 سنة: 150$</span>
+      </div>
+      <p style="margin-top: 15px;">📞 تواصل مع المطور: <b>+213541700591</b></p>
+      <p>💬 تيليجرام: <a href="https://t.me/DeV_xzanja" style="color:#00f7ff">@DeV_xzanja</a></p>
     </div>
   </div>
+
+  <script>
+    function validateLogin() {
+      const pass = document.getElementById('loginPass').value;
+      const error = document.getElementById('loginError');
+      if (pass === "2025") {
+        document.getElementById("loginSection").classList.remove("show");
+        document.getElementById("infoSection").classList.add("show");
+      } else {
+        error.textContent = "❌ كلمة السر غير صحيحة";
+      }
+    }
+
+    function showPrices() {
+      const username = document.getElementById("username").value;
+      const age = document.getElementById("age").value;
+      if (username && age >= 5) {
+        document.getElementById("infoSection").classList.remove("show");
+        document.getElementById("pricingSection").classList.add("show");
+      } else {
+        alert("يرجى إدخال اسمك الحقيقي وعمرك الصحيح.");
+      }
+    }
+  </script>
 </body>
 </html>
